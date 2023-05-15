@@ -14,5 +14,15 @@ func main(){
 	i, a = 8, 12
 	fmt.Println(i, a)
 	//short notation
-	//v := 8
+	v := 8
+	fmt.Println(v)
+	//constants, these cannot be declared in short form
+	const pi = 3.14
+	input()
+}
+func input(){
+	//takes user input
+	var input string
+	fmt.Scanln(&input)
+	fmt.Println(input)
 }
