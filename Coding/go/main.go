@@ -59,3 +59,92 @@ func switches(){
 	}
 }
 
+func loops(){
+	//for
+	sum :=1
+	res :=0
+	for sum <=1000{
+		res+= sum
+		sum ++
+	}
+	fmt.Println(res)
+
+	var years int
+    fmt.Scanln(&years)
+
+    s:= 7
+    for i:=0; i<years; i++{
+        s *=2
+    }
+    fmt.Println(s)
+}
+
+
+func loopSwitch() {
+    //your code goes here
+	var numbers [3]int
+
+	for i := 0; i < 3; i++ {
+		fmt.Scanln(&numbers[i])
+	}
+
+	// Convert numbers to corresponding texts and output them
+	for i := 0; i < 3; i++ {
+		text := numberToText(numbers[i])
+		fmt.Println(text)
+	}
+}
+
+// Function to convert a number to its corresponding text in English
+func numberToText(num int) string {
+	switch num {
+	case 0:
+		return "Zero"
+	case 1:
+		return "One"
+	case 2:
+		return "Two"
+	case 3:
+		return "Three"
+	case 4:
+		return "Four"
+	case 5:
+		return "Five"
+	case 6:
+		return "Six"
+	case 7:
+		return "Seven"
+	case 8:
+		return "Eight"
+	case 9:
+		return "Nine"
+	case 10:
+		return "Ten"
+	default:
+		return "Unknown"
+	}
+}
+
+//functions
+//calling functions from another function
+func calling() {
+    talk()
+}
+
+func talk(){
+    fmt.Println("GO")
+}
+func start() {
+    var w string
+    fmt.Scanln(&w)
+    var x int
+    fmt.Scanln(&x)
+
+    repeat(w, x)
+}
+
+func repeat(w string, x int) {
+    for i:= 0; i < x; i++ {
+        fmt.Println(w)
+    } 
+}
