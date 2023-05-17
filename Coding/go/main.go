@@ -148,3 +148,36 @@ func repeat(w string, x int) {
         fmt.Println(w)
     } 
 }
+// defer
+func welcome(){
+	fmt.Println("welcome")
+}
+//outputs the code in the second function, then outputs welcome
+func salutation(){
+	defer welcome()
+	fmt.Println("Hey")
+}
+
+//Scopes
+// global
+var myVar int
+
+//local
+func myFunc() {
+	var h string = ""
+}
+
+//mars age challenge
+func enter() {
+    var age int
+    fmt.Scanln(&age)
+
+    mars := mars_age(age)
+    fmt.Println(mars)
+}
+func mars_age(age int) int{
+    marsYear := 1.88 // Mars year is approximately 1.88 Earth years
+    marsAge := float64(age) / marsYear
+    marsAgeRounded := int(marsAge) // Rounding to the nearest whole number
+    return marsAgeRounded
+}
