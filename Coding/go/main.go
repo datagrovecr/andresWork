@@ -181,3 +181,43 @@ func mars_age(age int) int{
     marsAgeRounded := int(marsAge) // Rounding to the nearest whole number
     return marsAgeRounded
 }
+//pointers
+var p *int
+
+func point() {
+    var num float32
+     var factor float32
+
+    fmt.Scanln(&num)
+    fmt.Scanln(&factor)
+
+    scale(&num, factor)
+    fmt.Println(num)
+}
+
+func scale(num *float32, factor float32){
+    //mult num by factor
+      *num = *num * factor
+      }
+
+//structs (objects)
+func struc() {
+    e1 := Employee{"James", 42, "Manager", 0}
+
+    var x float32
+    fmt.Scanln(&x)
+    e1.salary = x
+    
+    fmt.Println("========")
+    fmt.Println(e1.name + "(" + e1.position + ")")
+    fmt.Println(e1.age)
+    fmt.Println(e1.salary)
+    fmt.Println("========")
+}
+
+type Employee struct{
+    name string
+    age int 
+    position string
+    salary float32
+}
