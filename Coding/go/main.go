@@ -3,7 +3,9 @@ package main
 //fmt Format package, allows input and output functionalities.
 import (
 	"fmt" 
-	//"math"
+	"math/rand"
+	"sync"
+	"time"
 )
 //import multiple packages
 
@@ -305,4 +307,25 @@ func buy(item string, price int, discount ... int ){
 		price-= discount[0]
 	}
 	fmt.Println("You bought %v for %d \n", item, price)
+}
+
+//goroutines
+func routine(){
+	start := time.Now()
+	wg :=sync.WaitGroup{}
+
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go showGoroutine(i, wg)
+	}
+	wg.Wait()
+	duration := time.Since(start).Milliseconds()
+
+	fmt.Printf("%dms \n", duration)
+}
+func showGoroutine(id int, wg *sync.WaitGroup){
+	delay := rand.Intn(500)
+	fmt.Printf("GOroutine #%d with %dms \n", id, delay)
+	time.Sleep(time.Millisecond * time.Duration(delay))
+	wg.Done()
 }
