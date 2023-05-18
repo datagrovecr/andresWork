@@ -247,3 +247,36 @@ func (more *Timer) tick(){
 //Array
 var a [5] int
 //b := [5]int{2, 4, 6, 8, 10}
+
+//Maps
+var mp map[string]int = map[string]int {
+	"apple": 5,
+	"pear": 6,
+	"orange": 9,
+} 
+
+
+//maps of strings that point to an integer, does not keep track of the order only knows that a key points to a value
+
+
+func maps(){
+	var mp map[string]int = map[string]int {
+		"apple": 5,
+		"pear": 6,
+		"orange": 9,
+	} 
+	//access values
+	fmt.Println(mp["apple"])
+	//change value
+	mp["apple"] = 900
+	//add value
+	mp["kiwi"] = 20
+	//delete value
+	delete(mp, "apple")
+
+	//check if a key exists
+	val, ok:= mp["apple"]
+
+	//get lenght of map
+	fmt.Println(len(mp))
+}
