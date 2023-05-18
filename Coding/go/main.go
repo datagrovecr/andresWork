@@ -219,7 +219,7 @@ type Employee struct{
     name string
     age int 
     position string
-    salary float32
+    salary float32 
 }
 
 func ponitStruct() {
@@ -279,4 +279,30 @@ func maps(){
 
 	//get lenght of map
 	fmt.Println(len(mp))
+}
+
+//variadic functions
+func begin(){
+	add(2,2)
+	add(1,2,3)
+}
+func add(nums ... int){
+	total := 0
+	for _, num:= range nums {
+		total += num
+	}
+	fmt.Println(total)
+}
+
+//with optional parameters
+func init(){
+	buy("milk", 9,0)
+	buy("cookies", 9,1)
+	buy("chips", 9,1)
+}
+func buy(item string, price int, discount ... int ){
+	if len(discount)>0 {
+		price-= discount[0]
+	}
+	fmt.Println("You bought %v for %d \n", item, price)
 }
