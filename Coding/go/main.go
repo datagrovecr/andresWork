@@ -241,3 +241,9 @@ func (more *Timer) tick(){
      more.value ++
      fmt.Println(more.value)
 }
+
+//Array, Range, Map unit
+
+//Array
+var a [5] int
+//b := [5]int{2, 4, 6, 8, 10}
