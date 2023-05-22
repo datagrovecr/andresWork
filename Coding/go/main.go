@@ -247,8 +247,17 @@ func (more *Timer) tick(){
 //Array, Range, Map unit
 
 //Array
-var a [5] int
+var ar [5] int
+
 //b := [5]int{2, 4, 6, 8, 10}
+
+func arr(){
+	ar[0] = 8
+	ar [1] = 54
+	fmt.Println(ar[1])
+	b := [5]int{2, 4, 6, 8, 10}
+	fmt.Println(b[1])
+}
 
 //Maps
 var mp map[string]int = map[string]int {
@@ -328,4 +337,19 @@ func showGoroutine(id int, wg *sync.WaitGroup){
 	fmt.Printf("GOroutine #%d with %dms \n", id, delay)
 	time.Sleep(time.Millisecond * time.Duration(delay))
 	wg.Done()
+}
+
+
+func Array(){
+	menu := [6]string{"Water", "Burger", "Cake", "Soup", "Soda", "Fries"}
+  
+	//your code goes here
+	var choice int
+	fmt.Scanln(&choice)
+	if choice > 5 || choice <0 {
+		fmt.Println("Invalid option")
+	}else{
+		fmt.Println(menu[choice])
+	}
+
 }
