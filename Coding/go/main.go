@@ -353,3 +353,18 @@ func Array(){
 	}
 
 }
+func slice(){
+	var n int
+	fmt.Scanln(&n)
+	
+	//your code goes here
+	  numbers := make([]int, 0, n)
+  
+	  for i := 0; i < n; i++ {
+		  var input int
+		  fmt.Scanln(&input)
+		  numbers = append(numbers, input)
+	  }
+  
+	  fmt.Println(numbers)
+}
