@@ -368,3 +368,12 @@ func slice(){
   
 	  fmt.Println(numbers)
 }
+
+
+func ranges(){
+	numbers := []int{10,20,30,40,50,60}
+
+	for _, number := range numbers{
+		fmt.Printf("Values is %d \n", number)
+	}
+}
